@@ -3,12 +3,11 @@
 , fetchpatch ? pkgs.fetchpatch
 , assetripper ? pkgs.assetripper
 }: assetripper.overrideAttrs (finalAttrs: {
-	version = "1.3.2";
+	version = "1.3.2+2583cf9fc";
 	src = finalAttrs.src.override (_: {
-		tag = "refs/tags/${finalAttrs.version}";
-#		tag = null;
-#		rev = "2583cf9fcd1f91d5142d391391b2c1aa520f2f64"; # = 01787539d^, where 01787539d reverts the adoption of NuGet CPM because the maintainer's IDE was malfunctioning
-#		hash = "sha256-afwpms2Z3mQ7ncDbSa4sZ3rtgjLctgyVo2BIagLwF78=";
+		tag = null;
+		rev = "2583cf9fcd1f91d5142d391391b2c1aa520f2f64"; # = 01787539d^, where 01787539d reverts the adoption of NuGet CPM because the maintainer's IDE was malfunctioning
+		hash = "sha256-afwpms2Z3mQ7ncDbSa4sZ3rtgjLctgyVo2BIagLwF78=";
 	});
 	nugetDeps = ./deps.json;
 	patches = (finalAttrs.patches or []) ++ [
