@@ -367,7 +367,7 @@ public static class WebApplicationLauncher
 		}
 	}
 
-	private static void RotateLogs(string path)
+	public static void RotateLogs(string path)
 	{
 		const int MaxLogFiles = 5;
 		string? directory = Path.GetDirectoryName(path);
